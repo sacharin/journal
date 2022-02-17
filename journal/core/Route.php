@@ -3,9 +3,9 @@
 include 'controllers/controller_404.php';
 class Route
 {
-    public function getPathArray()
+    public function getPathArray($BASE_URL)
     {
-        $BASE_URL = 'practical.home/';
+        //$BASE_URL = 'practical.home/';
         //Данная переменная будет хранить массив вложенности
         $pathArray = [];
         //Нам нужно, чтобы будущий роутинг считал, что мы находимся "в корне", а не вложены в каталог journal
@@ -37,13 +37,13 @@ class Route
         return $pathArray;
     }
 
-    static function start()
+    static function start($settings)
     {
         // контроллер и действие по умолчанию
         $controller_name = 'News';
         $action_name = 'index';
 
-        $routes = self::getPathArray();
+        $routes = self::getPathArray($settings['baseUrl']);
         // получаем имя контроллера
         if (!empty($routes[0])) {
             $controller_name = $routes[0];
