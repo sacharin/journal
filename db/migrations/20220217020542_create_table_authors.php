@@ -28,7 +28,7 @@ final class CreateTableAuthors extends AbstractMigration
               
          $data = [
             [
-                'fio' => 'Сивинский Станислав Адрееви',
+                'fio' => 'Сивинский Станислав Адреевич',
                 'age' => 28,
                 'location' => 'Санкт-Петербург',
                 'additional' => 'Преподаватель, Университет ИТМО'
