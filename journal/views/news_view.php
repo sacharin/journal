@@ -1,6 +1,5 @@
 <h1>Добро пожаловать на наш первый сайт!</h1>
-<table>
-	<tr><th>ID</th><th>Title</th><th>Content</th><th>Postcard</th></tr>
+<table class="table">
 	<?php 
 		for ($row_no = 0; $row_no <= $data->num_rows - 1; $row_no++) {
 		    $data->data_seek($row_no);

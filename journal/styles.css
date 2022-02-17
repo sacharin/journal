@@ -1,0 +1,58 @@
+.table td {
+    padding: 1em;
+    vertical-align: top;
+}
+
+.title {
+    font-size: 200%;
+}
+
+.subtitle {
+    font-size: 120%;
+}
+
+/* Контент */
+main {
+    padding: 1.5em;
+}
+
+h1 {
+    color: #4D4D4D;
+    text-align: center;
+    margin: 1em;
+}
+
+/* Главное меню */
+nav {
+    padding: .5em;
+    text-align: center;
+    font-size: 110%;
+    color: white;
+    background-color: #3C80C2;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+}
+
+nav li:not(:last-child) {
+    margin-right: .5em;
+}
+
+nav li:not(:last-child)::after {
+    content: "|";
+    margin-left: .5em;
+}
+
+nav a {
+    color: white;
+}
+
+nav a.active {
+    text-decoration: none;
+}

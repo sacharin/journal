@@ -1,15 +1,12 @@
 <?php
 
 include 'controllers/controller_404.php';
-
 class Route
 {
     public function getPathArray()
     {
-
         $BASE_URL = 'practical.home/';
         //Данная переменная будет хранить массив вложенности
-
         $pathArray = [];
         //Нам нужно, чтобы будущий роутинг считал, что мы находимся "в корне", а не вложены в каталог journal
         //Получаем текущий адрес
@@ -31,6 +28,7 @@ class Route
 
         //Либо воспользоваться функцией фильтра значений массива
         $pathArray = array_values(array_filter($tmpArray, function ($element) {
+
             return !empty($element);
         }));
         //Обязательно обернуть в array_values для сброса индексации.
@@ -60,7 +58,6 @@ class Route
         $model_name = 'Model_' . $controller_name;
         $controller_name = 'Controller_' . $controller_name;
         $action_name = 'action_' . $action_name;
-
         // подцепляем файл с классом модели (файла модели может и не быть)
         $model_file = strtolower($model_name) . '.php';
         $model_path = "models/" . $model_file;
@@ -86,10 +83,10 @@ class Route
         $action = $action_name;
 
         if (method_exists($controller, $action)) {
-            // вызываем действие контроллера
+        // вызываем действие контроллера
             $controller->$action();
         } else {
-            // здесь также разумнее было бы кинуть исключение
+        // здесь также разумнее было бы кинуть исключение
             Route::ErrorPage404();
         }
     }
@@ -97,10 +94,8 @@ class Route
     function ErrorPage404()
     {
         header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
-
         $controller = new Controller_404();
         $controller->action_index();
-
         exit;
     }
 }
