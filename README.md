@@ -18,4 +18,4 @@ quit;
 vendor/bin/phinx migrate
 
 ## Настройка nginx
-[Пример настройки nginx] (./journal.conf)
+[Пример настройки nginx](journal.conf)
